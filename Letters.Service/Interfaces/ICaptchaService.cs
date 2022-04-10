@@ -4,10 +4,12 @@ namespace Letters.Service.Interfaces
 {
     public interface ICaptchaService
     {
-        public CapthcaModel GetCapcha();
+        CapthcaModel GetCapcha();
 
-        Core.Models.CaptchaModel UpdateCaptcha(Guid key);
+        Core.Models.CaptchaModel Update(Guid key);
 
-        public byte[] Test(string key = "БВГД");
+        byte[] Test(string key = "БВГД");
+
+        bool Validate(Guid id, string value);
     }
 }

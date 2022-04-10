@@ -48,7 +48,6 @@ namespace Letters.Rest.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Letter([FromForm] LetterInputModel model)
         {
             var bytes = await model.File.GetBytes();
@@ -75,9 +74,63 @@ namespace Letters.Rest.Controllers
 
             try
             {
-                var captcha = _captchaService.UpdateCaptcha(model.Key);
+                var captcha = _captchaService.Update(model.Key);
 
                 return Ok(captcha);
+            }
+            catch (OwnException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Метод проверка капчи
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(bool))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> ValidateCaptcha([FromQuery]ValidateCaptchaInputModel model)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
+                var result = _captchaService.Validate(model.Id, model.Value);
+
+                return Ok(result);
+            }
+            catch (OwnException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Валидация формы
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<IActionResult> ValidateForm([FromForm] ValidateFormInputModel model)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
+            {
+                var capctha = _captchaService.Validate(model.CaptchaId, model.CaptchaValue);
+
+                if (!capctha)
+                    throw new OwnException("капча не валидна");
+
+                return Ok();
             }
             catch (OwnException ex)
             {

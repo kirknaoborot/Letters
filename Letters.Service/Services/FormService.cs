@@ -39,6 +39,11 @@ namespace Letters.Service.Services
             };
         }
 
+        public async Task Validate ()
+        {
+
+        }
+
         public async Task AddLetters(string text, string email, string address, string recipient, string phone, 
                                      string socialStatus, string firstName, string lastName, string middleName, byte[] file = null)
         {

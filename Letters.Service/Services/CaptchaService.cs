@@ -26,6 +26,16 @@ namespace Letters.Service.Services
             _cache = cache;
         }
 
+        public bool Validate(Guid id, string value)
+        {
+            if (!_cache.TryGetValue(id, out CapthcaModel capthca))
+            {
+                throw new OwnException($"капча по идентификатору {id}");
+            }
+
+            return string.Equals(capthca.Value, value, StringComparison.OrdinalIgnoreCase);
+        }
+
         public CapthcaModel GetCapcha()
         {
             var captcha = new CapthcaModel
@@ -42,7 +52,7 @@ namespace Letters.Service.Services
             return captcha;
         }
 
-        public Core.Models.CaptchaModel UpdateCaptcha(Guid key)
+        public Core.Models.CaptchaModel Update(Guid key)
         {
             var captchaModel = new Letters.Core.Models.CaptchaModel();
 
