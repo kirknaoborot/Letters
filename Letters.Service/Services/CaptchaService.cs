@@ -79,7 +79,7 @@ namespace Letters.Service.Services
             if (count <= 0)
                 throw new OwnException("Не верное кол-во символов для капчи");
 
-            var chars = "абвгдежзиклмнпрстуфхцчшщэюя123456789".ToCharArray();
+            var chars = "абвгдежзиклмнпрстуфхцчшщэюя".ToCharArray();
 
             var capchaValue = string.Empty;
 
@@ -139,23 +139,22 @@ namespace Letters.Service.Services
 
         public byte[] Test(string key = "БВГД")
         {
-            FontCollection collection = new();
+            key = GenerateCapcha(6).ToLower();
 
-            FontFamily family = collection.Add("Font/BureauAP.ttf");
+            var wavReader = new List<ISampleProvider>();
 
-            Font font = family.CreateFont(25, FontStyle.Regular);
-
-            using var image = new Image<Rgba32>(150, 96);
-            image.Mutate(picture =>
+            foreach (var element in key.ToCharArray())
             {
-                picture.DrawText(key, font, Color.Black, new PointF(10, 10));
+                wavReader.Add(new WaveFileReader($"Audio/{element}.wav").ToSampleProvider());
+            }
 
-                picture.SetGraphicsOptions(_ => _.Antialias = true);
-            });
+            var merged = new ConcatenatingSampleProvider(wavReader);
+
+            var waveProvider = merged.ToWaveProvider16();
 
             using var stream = new MemoryStream();
 
-            image.Save(stream, PngFormat.Instance);
+            WaveFileWriter.WriteWavFileToStream(stream, waveProvider);
 
             return stream.ToArray();
         }

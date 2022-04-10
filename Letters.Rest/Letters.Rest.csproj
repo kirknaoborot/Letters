@@ -4,183 +4,153 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>bin\Debug\net6.0\Letters.Rest.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Audio\0.wav" />
-    <None Remove="Audio\1.wav" />
-    <None Remove="Audio\2.wav" />
-    <None Remove="Audio\3.wav" />
-    <None Remove="Audio\4.wav" />
-    <None Remove="Audio\5.wav" />
-    <None Remove="Audio\6.wav" />
-    <None Remove="Audio\7.wav" />
-    <None Remove="Audio\8.wav" />
-    <None Remove="Audio\9.wav" />
-    <None Remove="Audio\Ё.wav" />
-    <None Remove="Audio\А.wav" />
-    <None Remove="Audio\Б.wav" />
-    <None Remove="Audio\В.wav" />
-    <None Remove="Audio\Г.wav" />
-    <None Remove="Audio\Д.wav" />
-    <None Remove="Audio\Е.wav" />
-    <None Remove="Audio\Ж.wav" />
-    <None Remove="Audio\З.wav" />
-    <None Remove="Audio\И.wav" />
-    <None Remove="Audio\Й.wav" />
-    <None Remove="Audio\К.wav" />
-    <None Remove="Audio\Л.wav" />
-    <None Remove="Audio\М.wav" />
-    <None Remove="Audio\Н.wav" />
-    <None Remove="Audio\О.wav" />
-    <None Remove="Audio\П.wav" />
-    <None Remove="Audio\Р.wav" />
-    <None Remove="Audio\С.wav" />
-    <None Remove="Audio\Т.wav" />
-    <None Remove="Audio\У.wav" />
-    <None Remove="Audio\Ф.wav" />
-    <None Remove="Audio\Х.wav" />
-    <None Remove="Audio\Ц.wav" />
-    <None Remove="Audio\Ч.wav" />
-    <None Remove="Audio\Ш.wav" />
-    <None Remove="Audio\Щ.wav" />
-    <None Remove="Audio\Ъ.wav" />
-    <None Remove="Audio\Ы.wav" />
-    <None Remove="Audio\Ь.wav" />
-    <None Remove="Audio\Э.wav" />
-    <None Remove="Audio\Ю.wav" />
-    <None Remove="Audio\Я.wav" />
+    <None Remove="Audio\ё.wav" />
+    <None Remove="Audio\а.wav" />
+    <None Remove="Audio\б.wav" />
+    <None Remove="Audio\в.wav" />
+    <None Remove="Audio\г.wav" />
+    <None Remove="Audio\д.wav" />
+    <None Remove="Audio\е.wav" />
+    <None Remove="Audio\ж.wav" />
+    <None Remove="Audio\з.wav" />
+    <None Remove="Audio\и.wav" />
+    <None Remove="Audio\й.wav" />
+    <None Remove="Audio\к.wav" />
+    <None Remove="Audio\л.wav" />
+    <None Remove="Audio\м.wav" />
+    <None Remove="Audio\н.wav" />
+    <None Remove="Audio\о.wav" />
+    <None Remove="Audio\п.wav" />
+    <None Remove="Audio\р.wav" />
+    <None Remove="Audio\с.wav" />
+    <None Remove="Audio\т.wav" />
+    <None Remove="Audio\у.wav" />
+    <None Remove="Audio\ф.wav" />
+    <None Remove="Audio\х.wav" />
+    <None Remove="Audio\ц.wav" />
+    <None Remove="Audio\ч.wav" />
+    <None Remove="Audio\ш.wav" />
+    <None Remove="Audio\щ.wav" />
+    <None Remove="Audio\ъ.wav" />
+    <None Remove="Audio\ы.wav" />
+    <None Remove="Audio\ь.wav" />
+    <None Remove="Audio\э.wav" />
+    <None Remove="Audio\ю.wav" />
+    <None Remove="Audio\я.wav" />
     <None Remove="Font\BureauAP.ttf" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Audio\0.wav">
+    <EmbeddedResource Include="Audio\ё.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\1.wav">
+    <EmbeddedResource Include="Audio\а.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\2.wav">
+    <EmbeddedResource Include="Audio\б.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\3.wav">
+    <EmbeddedResource Include="Audio\в.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\4.wav">
+    <EmbeddedResource Include="Audio\г.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\5.wav">
+    <EmbeddedResource Include="Audio\д.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\6.wav">
+    <EmbeddedResource Include="Audio\е.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\7.wav">
+    <EmbeddedResource Include="Audio\ж.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\8.wav">
+    <EmbeddedResource Include="Audio\з.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\9.wav">
+    <EmbeddedResource Include="Audio\и.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Ё.wav">
+    <EmbeddedResource Include="Audio\й.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\А.wav">
+    <EmbeddedResource Include="Audio\к.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Б.wav">
+    <EmbeddedResource Include="Audio\л.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\В.wav">
+    <EmbeddedResource Include="Audio\м.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Г.wav">
+    <EmbeddedResource Include="Audio\н.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Д.wav">
+    <EmbeddedResource Include="Audio\о.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Е.wav">
+    <EmbeddedResource Include="Audio\п.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Ж.wav">
+    <EmbeddedResource Include="Audio\р.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\З.wav">
+    <EmbeddedResource Include="Audio\с.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\И.wav">
+    <EmbeddedResource Include="Audio\т.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Й.wav">
+    <EmbeddedResource Include="Audio\у.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\К.wav">
+    <EmbeddedResource Include="Audio\ф.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Л.wav">
+    <EmbeddedResource Include="Audio\х.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\М.wav">
+    <EmbeddedResource Include="Audio\ц.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Н.wav">
+    <EmbeddedResource Include="Audio\ч.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\О.wav">
+    <EmbeddedResource Include="Audio\ш.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\П.wav">
+    <EmbeddedResource Include="Audio\щ.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Р.wav">
+    <EmbeddedResource Include="Audio\ъ.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\С.wav">
+    <EmbeddedResource Include="Audio\ы.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Т.wav">
+    <EmbeddedResource Include="Audio\ь.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\У.wav">
+    <EmbeddedResource Include="Audio\э.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Ф.wav">
+    <EmbeddedResource Include="Audio\ю.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Х.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Ц.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Ч.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Ш.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Щ.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Ъ.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Ы.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Ь.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Э.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Ю.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Audio\Я.wav">
+    <EmbeddedResource Include="Audio\я.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Font\BureauAP.ttf">

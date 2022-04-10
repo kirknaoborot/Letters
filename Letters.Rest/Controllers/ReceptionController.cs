@@ -143,7 +143,7 @@ namespace Letters.Rest.Controllers
         {
             var captcha = _captchaService.Test();
 
-            return File(captcha, "image/png");
+            return File(captcha, "audio/wav");
         }
     }
 }
