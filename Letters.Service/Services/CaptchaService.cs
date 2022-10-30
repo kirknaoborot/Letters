@@ -1,6 +1,9 @@
 ﻿using Letters.Service.Exceptions;
-using Letters.Service.Settings;
+using Letters.Service.Interfaces;
 using Letters.Service.Model;
+using Letters.Service.Settings;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Options;
 using NAudio.Wave;
 using NAudio.Wave.SampleProviders;
 using SixLabors.Fonts;
@@ -9,15 +12,12 @@ using SixLabors.ImageSharp.Drawing.Processing;
 using SixLabors.ImageSharp.Formats.Png;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
-using Letters.Service.Interfaces;
-using Microsoft.Extensions.Options;
-using Microsoft.Extensions.Caching.Memory;
 
 namespace Letters.Service.Services
 {
     public class CaptchaService : ICaptchaService
     {
-        private readonly Captcha _capchaSettings;
+        private Captcha _capchaSettings;
         private readonly IMemoryCache _cache;
 
         public CaptchaService(IOptions<Captcha> capchaSettings, IMemoryCache cache)
@@ -41,7 +41,7 @@ namespace Letters.Service.Services
             var captcha = new CapthcaModel
             {
                 Id = Guid.NewGuid(),
-                Value = GenerateCapcha(_capchaSettings.LenghtSymbols).ToUpper()
+                Value = GenerateCapcha(_capchaSettings.LenghtSymbols)
             };
 
             captcha.Image = GenerateImage(captcha.Value, _capchaSettings.Width, _capchaSettings.Height);
@@ -54,7 +54,7 @@ namespace Letters.Service.Services
 
         public Core.Models.CaptchaModel Update(Guid key)
         {
-            var captchaModel = new Letters.Core.Models.CaptchaModel();
+            var captchaModel = new Core.Models.CaptchaModel();
 
             if (_cache.TryGetValue(key, out CapthcaModel captcha))
             {
@@ -116,18 +116,18 @@ namespace Letters.Service.Services
             return Convert.ToBase64String(stream.ToArray());
         }
 
-        private string GenerateAudio(string key)
+        private static string GenerateAudio(string key)
         {
             var wavReader = new List<ISampleProvider>();
 
-            foreach(var element in key.ToCharArray())
+            foreach (var element in key.ToCharArray())
             {
                 wavReader.Add(new WaveFileReader($"Audio/{element}.wav").ToSampleProvider());
             }
 
             var merged = new ConcatenatingSampleProvider(wavReader);
 
-            var waveProvider =  merged.ToWaveProvider16();
+            var waveProvider = merged.ToWaveProvider16();
 
             using var stream = new MemoryStream();
 

@@ -50,10 +50,7 @@ namespace Letters.Rest.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Letter([FromForm] LetterInputModel model)
         {
-            var bytes = await model.File.GetBytes();
-
-            await _formService.AddLetters(model.Text, model.Email, model.Address, model.Recipient, model.Phone,
-                                          model.SocialStatus, model.FirstName, model.LastName, model.MiddleName, bytes);
+            await _formService.AddLetters(model);
 
             return Ok();
         }
@@ -95,7 +92,7 @@ namespace Letters.Rest.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> ValidateCaptcha([FromQuery]ValidateCaptchaInputModel model)
+        public async Task<IActionResult> ValidateCaptcha([FromQuery] ValidateCaptchaInputModel model)
         {
             try
             {

@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Letters.Rest", "Letters.Rest\Letters.Rest.csproj", "{A166CCBC-27B9-4413-BD6E-AFF4B1014458}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Letters.Rest", "Letters.Rest\Letters.Rest.csproj", "{A166CCBC-27B9-4413-BD6E-AFF4B1014458}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Letters.Service", "Letters.Service\Letters.Service.csproj", "{4AB74A00-EF94-4E6E-913A-6C364DBD350E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Letters.Service", "Letters.Service\Letters.Service.csproj", "{4AB74A00-EF94-4E6E-913A-6C364DBD350E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Letters.Data", "Letters.Data\Letters.Data.csproj", "{89B313AB-7815-4021-8325-1A1B3F4AB0A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Letters.Data", "Letters.Data\Letters.Data.csproj", "{89B313AB-7815-4021-8325-1A1B3F4AB0A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Letters.Core", "Letters.Core\Letters.Core.csproj", "{367FF713-FF5F-4232-AFCE-EFFE5B196B5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Letters.Core", "Letters.Core\Letters.Core.csproj", "{367FF713-FF5F-4232-AFCE-EFFE5B196B5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Letters.Handler", "Letters.Handler\Letters.Handler.csproj", "{DFAB9DA4-81EA-43B5-B7DF-36B058ED37D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{367FF713-FF5F-4232-AFCE-EFFE5B196B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{367FF713-FF5F-4232-AFCE-EFFE5B196B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{367FF713-FF5F-4232-AFCE-EFFE5B196B5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFAB9DA4-81EA-43B5-B7DF-36B058ED37D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFAB9DA4-81EA-43B5-B7DF-36B058ED37D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFAB9DA4-81EA-43B5-B7DF-36B058ED37D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFAB9DA4-81EA-43B5-B7DF-36B058ED37D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

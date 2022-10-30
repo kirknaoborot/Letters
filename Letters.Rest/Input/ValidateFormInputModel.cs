@@ -26,7 +26,7 @@ namespace Letters.Rest.Input
         /// Текст обращения
         /// </summary>
         [Required]
-        [StringLength(5000, ErrorMessage = "Не корректно передан текст обращения",MinimumLength = 5)]
+        [StringLength(5000, ErrorMessage = "Не корректно передан текст обращения", MinimumLength = 5)]
         public string Text { get; set; }
         /// <summary>
         /// Идентификатор капчи

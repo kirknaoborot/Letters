@@ -1,30 +1,24 @@
-﻿using Letters.Service.InputModels;
-using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Http;
 
-namespace Letters.Rest.Input
+namespace Letters.Service.InputModels
 {
-    public class LetterInputModel : ILetterInputModel
+    public interface ILetterInputModel
     {
         /// <summary>
         /// Адрес электронной почты
         /// </summary>
-        [Required]
-        [EmailAddress]
         public string Email { get; set; }
         /// <summary>
         /// Текст обращения
         /// </summary>
-        [Required]
         public string Text { get; set; }
         /// <summary>
         /// В адрес кого направлено обращение
         /// </summary>
-        [Required]
         public string Recipient { get; set; }
         /// <summary>
         /// Значение капчи для повторной проверки
         /// </summary>
-        [Required]
         public string CaptchaValue { get; set; }
         /// <summary>
         /// Телефон

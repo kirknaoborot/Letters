@@ -12,21 +12,30 @@ namespace Letters.Rest.Validate
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            var file = value as IFormFile;
-            if (file != null)
+            long lenght = 0;
+
+            if (value is IFormCollection files)
             {
-                if (file.Length > _maxFileSize)
+                foreach (IFormFile file in files.Files)
                 {
-                    return new ValidationResult(GetErrorMessage());
+                    if (file.Length > _maxFileSize)
+                    {
+                        return new ValidationResult(GetErrorMessage($"Превышен максимальный размер файла в { _maxFileSize} 20МБ."));
+                    }
+
+                    lenght += file.Length;
+
+                    if (lenght > _maxFileSize)
+                        return new ValidationResult(GetErrorMessage($"Превышен суммарный размер файлов в { _maxFileSize} 20МБ."));
                 }
             }
 
             return ValidationResult.Success;
         }
 
-        public string GetErrorMessage()
+        public string GetErrorMessage(string message)
         {
-            return $"Превышен максимальный размер файла в { _maxFileSize} 20МБ.";
+            return $"Превышен максимальный размер файла/ов в { _maxFileSize} 20МБ.";
         }
     }
 }

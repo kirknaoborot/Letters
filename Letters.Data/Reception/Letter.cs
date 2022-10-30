@@ -11,6 +11,11 @@ namespace Letters.Data.Reception
         [Column("ID")]
         public Guid Id { get; set; }
         /// <summary>
+        /// Идентификатор пользователя если отправка через ГОС УСЛУГИ
+        /// </summary>
+        [Column("USER_ID")]
+        public Guid? UserId { get; set; }
+        /// <summary>
         /// Электронный адрес почты
         /// </summary>
         [Column("EMAIL")]
@@ -46,14 +51,24 @@ namespace Letters.Data.Reception
         [Column("TEXT")]
         public string Text { get; set; }
         /// <summary>
-        /// Вложение
-        /// </summary>
-        [Column("ATTACH")]
-        public byte[]? Attach { get; set; }
-        /// <summary>
         /// Флаг обработки
         /// </summary>
         [Column("IS_PROCESSED")]
         public bool IsProcessed { get; set; }
+        /// <summary>
+        /// Дата обращения
+        /// </summary>
+        [Column("Дата создания обращения")]
+        public DateTime CreateDate { get; set; }
+        /// <summary>
+        /// Флаг отслеживания истории
+        /// </summary>
+        [Column("IS_HISTORY")]
+        public bool IsHistory { get; set; }
+
+        [Column("DOCUMENT_ID")]
+        public Guid? DocumentId { get; set; }
+
+        public ICollection<Attach> Attaches { get; set; }
     }
 }

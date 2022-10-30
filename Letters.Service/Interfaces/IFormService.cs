@@ -1,4 +1,5 @@
 ﻿using Letters.Core.Models;
+using Letters.Service.InputModels;
 
 namespace Letters.Service.Interfaces
 {
@@ -6,7 +7,6 @@ namespace Letters.Service.Interfaces
     {
         Task<FormModel> GetForm(Guid receptionId);
 
-        Task AddLetters(string text, string email, string address, string recipient, string phone,
-                                     string socialStatus, string firstName, string lastName, string middleName, byte[] file = null);
+        Task AddLetters(ILetterInputModel model);
     }
 }
